@@ -1,2 +1,2 @@
 # cdp_scripts
-Some helpful for CLoudera cdp admin scripts
+Some helpful scripts for CLoudera cdp administration
