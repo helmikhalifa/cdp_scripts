@@ -11,5 +11,5 @@
 
 service=$1
 keytab=`ls -ltr /var/run/cloudera-scm-agent/process/*-$service*/$service.keytab | tail -1 | grep -o -P '(?<=:[0-9][0-9] ).*'`
-principal=`klist -kt $keytab | tail -1 | grep -o -P '(?<=:[0-9][0-9] ).*'` 
+principal=`klist -kt $keytab | grep $service | tail -1 | grep -o -P '(?<=:[0-9][0-9] ).*'` 
 kinit -kt $keytab $principal
